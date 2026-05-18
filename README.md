@@ -6,13 +6,13 @@ An immersive, cinematic, and interactive sales tool designed for Mall of America
 
 - **Cinematic Opening Sequence:** A 15-second immersive intro that establishes scale and ambition immediately.
 - **Interactive & Non-Linear Navigation:** A vertical scroll-spy side navigation and tabbed interfaces allow the viewer (or presenter) to control the journey.
-- **Performance Optimized:** Clean architecture prioritizing speed, leveraging optimized assets and lazy loading to target a 90+ Lighthouse score.
+- **Performance Optimized:** Clean Next.js architecture prioritizing speed, leveraging optimized assets and lazy loading to target a 90+ Lighthouse score.
 - **Responsive Design:** A premium, luxury-inspired dark UI that adapts flawlessly across desktop and tablet displays.
 - **AI-Generated Assets:** Visuals crafted using advanced generative AI to represent the ultimate vision of the property where real assets were unavailable.
 
 ## 🚀 Setup & Installation
 
-This project is built using vanilla HTML, CSS, and JavaScript. No build step or package manager is required for the core experience.
+This project is built using Next.js (App Router), React, and Tailwind CSS.
 
 1. **Clone the repository:**
    ```bash
@@ -20,44 +20,52 @@ This project is built using vanilla HTML, CSS, and JavaScript. No build step or 
    cd moa-interactive-deck
    ```
 
-2. **Run Locally:**
-   Simply open `index.html` in any modern web browser, or serve it using a local development server:
+2. **Install Dependencies:**
    ```bash
-   # Using Python 3
-   python3 -m http.server 8000
+   npm install
    ```
-   Then navigate to `http://localhost:8000`
+
+3. **Run Locally:**
+   ```bash
+   npm run dev
+   ```
+   Then navigate to `http://localhost:3000`
 
 ## 🌐 Deployment
 
-The project is ready to be deployed immediately via any static hosting provider.
+The easiest way to deploy this Next.js app is to use the Vercel Platform.
 
-**To deploy to GitHub Pages:**
-1. Push the code to a GitHub repository.
-2. Go to **Settings > Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and the `/` (root) folder.
-5. Click **Save**. Your site will be live in a few minutes.
+1. Push your code to a GitHub repository.
+2. Import the project into Vercel.
+3. Vercel will automatically detect Next.js and configure the build settings.
+4. Click Deploy. Your site will be live on a global CDN in minutes.
 
-**To deploy to Vercel or Netlify:**
-1. Connect your GitHub repository to the platform.
-2. Leave the build command empty (since it's static).
-3. Set the publish directory to the root (`./`).
-4. Deploy!
+## 🌍 Live Demo
+
+- Production URL: https://inter-deck.vercel.app
+
+## 📸 Screenshots
+
+![Mall of America Deck screenshot](public/assets/deck-screenshot.png)
+
+![Mall of America Deck screenshot 2](public/assets/deck-screenshot-2.png)
 
 ## 📁 Project Structure
 
 ```
-├── index.html       # Core markup and content structure
-├── style.css        # Animations, layouts, and responsive luxury UI
-├── script.js        # Cinematic sequence logic and interactive modals
-├── hero.png         # Generated asset: Aerial Night View
-├── retail.png       # Generated asset: Luxury Corridor
-├── events.png       # Generated asset: Concert Arena
-└── README.md        # Documentation
+├── src/
+│   ├── app/           # Next.js App Router (page.tsx, layout.tsx)
+│   ├── components/    # Reusable React components
+│   │   ├── cinematic/ # Hero video sections
+│   │   ├── motion/    # Scroll reveals and counters
+│   │   ├── sections/  # Core page content modules
+│   │   └── ui/        # Floating CTA and generic grids
+├── public/
+│   └── assets/        # Static images and media
+└── README.md          # Documentation
 ```
 
 ## 📈 Technical Requirements Addressed
 - **Clean UI:** Minimalist chrome, high-contrast dark theme, modern typography (Outfit & Playfair Display).
 - **Video-First Approach:** Support for ambient background video and motion elements.
-- **Performance:** Separated concerns (HTML/CSS/JS), deferred loading of non-critical elements, and optimized DOM manipulation.
+- **Performance:** Component-based architecture, lazy loading, optimized Next.js Image/Video handling.
